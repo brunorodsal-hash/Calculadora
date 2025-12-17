@@ -45,6 +45,22 @@ public class Calcu {
                     salir = true;
                     System.out.println("Saliendo. ¡Hasta luego!");
                     break;
+                case "7":
+                    System.out.print("Introduce la base: ");
+                    double base = Double.parseDouble(sc.nextLine());
+                    System.out.print("Introduce el exponente: ");
+                    double exp = Double.parseDouble(sc.nextLine());
+                    System.out.printf("Resultado: %.6f%n", FuncionesExtra.potencia(base, exp));
+                    break;
+                case "8":
+                    System.out.print("Introduce el número: ");
+                    double num = Double.parseDouble(sc.nextLine());
+                    try {
+                        System.out.printf("Resultado: %.6f%n", FuncionesExtra.raizCuadrada(num));
+                    } catch (IllegalArgumentException e) {
+                        System.out.println(e.getMessage());
+                    }
+                    break;
                 default:
                     System.out.println("Opción no válida. Intenta de nuevo.");
             }
@@ -65,6 +81,8 @@ public class Calcu {
         System.out.println("4) Dividir");
         System.out.println("5) Módulo");
         System.out.println("6) Salir");
+        System.out.println("7) Potencia");
+        System.out.println("8) Raíz cuadrada");
     }
 
     private static double[] leerDosNumeros(Scanner sc) {
